@@ -1,1 +1,1 @@
-se reaiza una cambio en gt 
+se reaiza una cambio en gt  casa
