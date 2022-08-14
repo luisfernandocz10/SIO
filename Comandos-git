@@ -111,3 +111,19 @@ Comandos para usar git
 
 #para descargar los cambios del repositorio remoto al local
 	git pull
+
+
+# Si se desea subir todo el repositorio a github 
+	primero hacemos
+		git add .
+
+		git commit -m "se suben todos los archivos del repositorio"
+
+		git push
+
+# Si queremos subir solo un archivo a github 
+	git add archivo.txt
+
+	git commit -m "solo subo una archivo"
+
+	git push
