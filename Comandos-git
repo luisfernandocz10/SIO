@@ -105,7 +105,7 @@ Comandos para usar git
 		ejemplo (ver git config --list):
 			https://luisfernandocz10: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@github.com/luisfernandocz10/SIO.git
 
-# para las subsecuentes actualizaciones, sino cambias de rama
+# para las subsecuentes actualizaciones (por eso -u), sino cambias de rama
 	git push
 
 
