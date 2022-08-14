@@ -1,0 +1,113 @@
+Comandos para usar git
+
+# para instalar git desde terminal:
+	git install git
+	
+# con esto podemos ver la configuarcion que tiene git
+	
+	git config --list
+
+		por ejemplo:
+			user.name=fer
+			user.email=luisfernandocz10@gmail.com
+			user.ui=true
+			core.editor=subl
+			core.repositoryformatversion=0
+			core.filemode=true
+			core.bare=false
+			core.logallrefupdates=true
+			remote.origin.url=https://luisfernandocz10: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@github.com/luisfernandocz10/SIO.git
+			remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+			branch.master.remote=origin
+			branch.master.merge=refs/heads/master
+
+
+		el user.name es el usuario cualquiera para identificarte con git con este nombre +
+		quedara registrado los cambio que hagas
+
+# Cambiar el nombre de usuario
+	git config --global user.name "fer"
+
+# Cambiar el emai
+	git config --global user.email "luisfernandocz10@gmail.com"
+
+# Para activar todos los colores de terminal predeterminados, establezca color.ui en verdadero:
+# Git colorea automáticamente la mayor parte de su salida si se lo pide
+	
+	git config --global color.ui true
+
+# asignando visual studio code como editor de configuración de git. Podemos cambialo a sublime text "subl"
+	git config --global core.editor "code --wait"
+	git config --global -e		// un cambio a la edicion global
+
+
+
+# Ayuda; ver todas las opciones de la configuración en la terminal
+	git config -h
+
+# Ayuda, ver todas las opciones de la configuración en el navegador
+	git help config
+
+# Para sincronizar una carpeta con git (solo se lo aplica una vez)
+	git init
+
+# agregar los cambios de un archivo al staged
+	git add archivo/directorio
+
+	por ejempo:
+		git add main.cpp
+
+# agregar todos los cambios de todos los archivos al staged
+	git add .
+
+# Ver en cual de los tres estados te encuentras y al flujo de los archivos.
+	git status
+
+# los cambios son comprometidos en el repositorio
+# debes escribir el mensaje del cambio
+# cuando se abra el archivo de configuración
+# al terminar guarda y cierra el archivo
+# para que los cambios tengan efecto
+	git commit
+
+# es un shortcut del comando anterior
+# escribes y confirmas el mensaje del cambio en un sólo paso
+	git commit -m "mensaje descriptivo del cambio"
+
+	# se agrega el origen remoto de tu repositorio de GitHub
+		git remote add origin https://github.com/usuario/repositorio.git
+
+		por ejemplo (Vas a github y crear un nuevo repositorio, copias el link.)
+			git remote add origin https://github.com/luisfernandocz10/SIO.git
+
+# la primera vez que vinculamos el repositorio remoto con el local
+	git push -u origin master
+
+	Ahora se te va pedir el nombre de usuario
+
+		Username for 'https://github.com': fer    		// user de la config
+		Password for 'https://luisfernandocz10@github.com': 
+		remote: Support for password authentication was removed on August 13, 2021.
+		remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+		fatal: Autenticación falló para 'https://github.com/luisfernandocz10/SIO.git/'
+
+
+	si se te da este error al poner la contraseña tenes que ir a la configuracon de github - Developer settings - Personal accesss tokens y generar uno
+		por ejempo
+			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
+
+
+	Se te va a pedir cada ves que realices un push el usuario y la pass token
+	y el bastante molesto asi que hay que cnfigurlo
+
+		git remote set-url origin https://username:token@github.com/put_username_here/repo-name.git
+
+		ejemplo (ver git config --list):
+			https://luisfernandocz10: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@github.com/luisfernandocz10/SIO.git
+
+# para las subsecuentes actualizaciones, sino cambias de rama
+	git push
+
+
+#para descargar los cambios del repositorio remoto al local
+	git pull
